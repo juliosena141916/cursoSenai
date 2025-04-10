@@ -1,0 +1,28 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <input type = "text" id = "vetorMedia" placeholder = "Digite 4 números separados (2x2)">
+        <button onclick = "calcularMedia()">Calcular Média</button>
+        <p id = "resultadoMedia"></p>
+
+        <script>
+            function calcularMedia() {
+                const vetor = document.getElementById("vetorMedia").value.split(" ").map(Number);
+                var conta = 0;
+                for(let i = 0; i < vetor.lenght; i++){
+                    conta += vetor[i];
+                }
+                conta = conta/vetor.lenght;
+                document.getElementById("resultadoMedia").innerHTML = "Média: " + conta;
+            }
+        </script>
+
+    </body>
+    </html>

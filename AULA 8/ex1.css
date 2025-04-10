@@ -1,0 +1,29 @@
+.elevador-modelo{
+    position: relative;
+    width: 200px;
+    height: 400px;
+    border: 1px solid #ccc;
+    margin: 50px auto;
+}
+
+.elevador{
+    position: absolute;
+    width: 80px;
+    height: 50px;
+    background-color: #007bff;
+    transition: bottom 1s ease-in-out;
+}
+
+.andar{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    top: 0; 
+}
+
+.andar-botao{
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
