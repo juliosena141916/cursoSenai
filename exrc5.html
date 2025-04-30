@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Coloque as informações do seu carro</h1>
+    carro = <input type="text" id="carro" value="Fusca"><br><br>
+    preço = <input type="text" id="preco" value="0"><br><br>
+    ano = <input type="text" id="ano" value="0"><br><br>
+    combustvel = <input type="text" id="combustivel" value="gasolina"><br><br>
+    <button onclick="confirmar()">Confirmar</button>
+    <div id="resultado"></div>
+
+    <script>
+        function confirmar() {
+            var carro = document.getElementById('carro').value;
+            var preco = document.getElementById('preco').value;
+            var ano = document.getElementById('ano').value;
+            var combustivel = document.getElementById('combustivel').value;
+            var resultado;
+
+            switch (carro) {
+                case 'Fusca':
+                    var resultado = "Os serviços disponiveis para o seu carro são: troca de pneus e revisão geral.";
+                    break;
+                case 'Civic':
+                    var resultado = "Os serviços disponiveis para o seu carro são: troca de óleo, troca de pneus e troca de motor.";
+                    break;
+                case 'Corolla':
+                    var resultado = "Os serviços disponiveis para o seu carro são: troca de óleo";
+                    break;
+                default:
+                    var resultado = "Não trabalhamos com esse carro!";
+            }
+            document.getElementById('resultado').innerHTML = resultado
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    roupas = <input type="text" id="roupas" value="camisa"><br><br>
+    quantidade = <input type="text" id="quantidade" value="1"><br><br>
+    <button onclick="comprar()">Comprar</button>
+    <div id="valor"></div>
+
+    <script>
+        function comprar() {
+            var roupas = document.getElementById('roupas').value;
+            var quantidade = document.getElementById('quantidade').value;
+            var desconto;
+
+            switch (roupas) {
+                case 'camisa':
+                    preco = 80;
+                    desconto = preco * 0.10;
+                    if (quantidade > 1) {
+                        document.getElementById('valor').innerHTML = "O valor com desconto é: " + ((preco * quantidade - desconto));
+                    }
+                    break;
+                case 'calça':
+                    preco = 100;
+                    desconto = preco * 0.10;
+                    if (quantidade > 1) {
+                        document.getElementById('valor').innerHTML = "O valor com desconto é: " + ((preco * quantidade - desconto));
+                    }
+                    break;
+                case 'sapato':
+                    preco = 50;
+                    desconto = preco * 0.10;
+                    break;
+                default:
+                    alert("Produto inválido!");
+                    return;
+            }
+            document.getElementById('valor').innerHTML = "O valor com desconto é: " + ((preco * quantidade - desconto));
+        }
+    </script>
+</body>
+</html>
