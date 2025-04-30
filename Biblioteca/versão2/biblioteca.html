@@ -15,6 +15,8 @@
             <button onclick="mostrarSecao('cadastro')">Cadastrar Livro</button>
             <button onclick="mostrarSecao('consulta')">Consultar Livro</button>
             <button onclick="mostrarSecao('alterar')">Alterar Livro</button>
+            <button onclick="mostrarSecao('emprestimo')">Emprestar Livro</button>
+            
         </div>
 
         <!--Seção de cadastro-->
@@ -51,6 +53,23 @@
                 <tbody id="lista-livros">
                 </tbody>
             </table>
+        </div>
+        
+        <div id="alterar" class="hidden">
+            <h2>Alterar Livro</h2>
+            <input type="text" id="busca-alterar" placeholder="Buscar por Titulo" oninput="buscarLivroAlterar()">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Ano</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-livros-alterar">
+                </tbody>
+            </table>
+
         </div>
 
     </div>

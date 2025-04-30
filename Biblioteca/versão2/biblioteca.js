@@ -4,7 +4,7 @@ let livroParaAlterar = null;
 function mostrarSecao(secao) {
     document.getElementById("cadastro").classList.add("hidden");
     document.getElementById("consulta").classList.add("hidden");
-   // document.getElementById("alterar").classList.add("hidden");
+    document.getElementById("alterar").classList.add("hidden");
 
     document.getElementById(secao).classList.remove("hidden");
     
@@ -32,6 +32,41 @@ function adicionarLivro() {
         const resultados = biblioteca.filter((livro) => livro.titulo.toLowerCase().includes(busca));
         atualizarLista(resultados);
     }
+
+function buscarLivroParaAlterar() {
+    const busca = document.getElementById("busca-aterar").value.toLowerCase();
+    livroParaAlterar = biblioteca.find((livro) =>
+     livro.titulo.toLowerCase().includes(busca));
+};
+
+if (livroParaAlterar) {
+    document.getElementById("form-alterar").classList.remove("hidden");
+    document.getElementById("novo-titulo").value = livroParaAlterar.titulo;
+    document.getElementById("novo-autor").value = livroParaAlterar.autor;
+    document.getElementById("novo-ano").value = livroParaAlterar.ano;
+}else{
+    alert("Livro não encontradado!");
+}
+
+function alterarLivro(){
+    if(livroParaAlterar){
+        const novoTitulo = document.getElementById("novo-titulo").value;
+        const novoAutor = document.getElementById("novo-autor").value;
+        const novoAno = document.getElementById("novo-ano").value;
+
+        if (novoTitulo && novoAutor && novoAno){
+            livroParaAlterar.titulo = novoTitulo;
+            livroParaAlterar.autor = novoAutor;
+            livroParaAlterar.ano = novoAno;
+
+            atualizarLista();
+            alert("Livro alterado com sucesso!");
+            document.getElementById("form-alterar").classList.add("hidden");
+        }else{
+            alert("Por favor, preencha todos os campos.");
+        }
+    }
+}
 
 function atualizarLista(lista = biblioteca) {
     const tabela = document.getElementById("lista-livros");
