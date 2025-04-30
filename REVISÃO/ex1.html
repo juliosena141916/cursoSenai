@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signos</title>
+</head>
+<body>
+    <h1>Descubra seu signo</h1>
+    Digite seu mês entre 1 - 12: <input type="number" id="signo" min="1" max="12">
+    <button onclick="exibirSigno()">Ver signo</button>
+    <p id="resultado"></p>
+
+    <script>
+        function exibirSigno(){
+            let mes = parseInt(document.getElementById("signo").value);
+            let resultado;
+
+            switch(mes){
+                case 1:
+                    resultado = "Capricórnio e Aquário";
+                    break;
+                case 2:
+                    resultado = "Aquario e peixe";
+                    break;
+                default:
+                    resultado = "mês invalido"    
+            }
+            document.getElmentById("resultado").innerHTML = `O mês selecionado foi ${mes} e o signo é ${resultado}`
+        }
+    </script>
+</body>
+</html>
