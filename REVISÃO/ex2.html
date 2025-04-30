@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispositivos antigos</title>
+</head>
+<body>
+    <h1>Escolha um dispositivo</h1>
+    Escreva qual seu dispositivo: <input type="text" id="dispositivo">
+    <button onclick="exibirInformacao()">Mostrar informação</button>
+    <p id="resultado"></p>
+
+    <script>
+        function exibirInformacao(){
+            let aparelho = getElementById("dispositivo").value
+            let resultado;
+            switch(dispositivo){
+                case Fita cassete:
+                    resultado = "A fita cassete, também conhecida como K7 ou compact cassette, é um formato de mídia analógica para gravação de áudio. Foi inventada pela Philips em 1963 e rapidamente se tornou popular por sua praticidade e custo-benefício."
+                    break;
+                case DVD:
+                    resultado = "DVD é a sigla para Digital Versatile Disc ou Digital Video Disc, e refere-se a um formato de disco óptico usado para armazenar dados, especialmente filmes e vídeos. É um disco pequeno e redondo que usa um laser para ler informações gravadas em trilhas. "  
+                    break;
+                case CD:
+                    resultado = "Um CD, ou disco compacto, é uma mídia de armazenamento de dados óptica digital que originalmente se destinava à reprodução de áudio, mas que evoluiu para o armazenamento de dados em geral (CD-ROM). O CD utiliza um sistema de leitura de laser para acessar a informação armazenada em pistas espirais no disco. "   
+                    break;
+                default:
+                    resultado = "Dispositivo invalido"        
+            }
+            getElementById("resultado").innerHTML = `${resultado}`
+        }
+    </script>
+    
+</body>
+</html>
