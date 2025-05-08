@@ -93,6 +93,20 @@
       </div>
     </div>
 
+    <div id="emprestimo" class="hidden">
+        <h2>Emprestar Livro</h2>
+        <div class="form-group">
+            <label for="nome livro">Título:</label>
+            <input type="text" id="livro-emprestimo" placeholder="Digite o título do livro">
+        </div>
+        <div class="form-group">
+            <label for="nome-user">Nome do Empréstimo:</label>
+            <input type="text" id="usuario" placeholder="nome do user">
+        </div>
+        <button onclick="fazerEmprestimo()">Fazer emprestimo</button>
+        <h2>Livros Emprestados</h2>
+        <div id="exibir"></div>
+
     <div id="venda" class="hidden">
         <h2>Venda de Livros</h2>
         <div class="form-group">
@@ -111,7 +125,23 @@
         <h3>Livros Vendidos</h3>
         <ul id="lista-vendas"></ul>
     </div>
+
+    <div id="relatorio-vendas" class="hidden">
+        <h3>Relatório de Vendas</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Preço</th>
+                    <th>Comprador</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-relatorio-vendas">
+                <!-- Vendas serão exibidas aqui -->
+            </tbody>
+        </table>
   </div>
+</div>
   <script src="biblioteca3.js"></script>
 </body>
 </html>

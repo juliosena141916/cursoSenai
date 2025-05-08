@@ -6,6 +6,8 @@ function mostrarSecao(secao) {
   document.getElementById("cadastro").classList.add("hidden");
   document.getElementById("consulta").classList.add("hidden");
   document.getElementById("alterar").classList.add("hidden");
+  document.getElementById("emprestimo").classList.add("hidden");
+  document.getElementById("vendas").classList.add("hidden");
 
   // Mostra a seção selecionada
   document.getElementById(secao).classList.remove("hidden");
@@ -87,7 +89,18 @@ function atualizarLista(lista = biblioteca) {
   });
 }
 
+const fazerEmprestimo = () => {
+    const livroEmprestimo = document.getElementById('livro-emprestimo').value.toLowerCase();
+    const usuario = document.getElementById('usuario').value.toLowerCase();
+    const ex = document.getElementById('exibir').value.toLowerCase();
 
+    const livro = biblioteca.find((livro) => livro.titulo.toLowerCase().includes(livroEmprestimo));
+    if (livro) {
+        ex.innerHTML = `Livro emprestado: ${livroEmpretimo} - Usuário: ${usuario}`;
+    }else{
+        alert("Livro não encontrado.");
+    }
+}
 
 
 
@@ -116,3 +129,44 @@ function registrarVenda() {
     }
 }
 
+function gerarRelatorioVendas() {
+    const tabelaRelatorio = document.getElementById('tabela-relatorio-vendas');
+    tabelaRelatorio.innerHTML = ""; // Limpa o relatório anterior
+
+    if (vendas.length === 0) {
+        alert("Nenhuma venda registrada.");
+        return;
+        }
+
+        let totalVendas = 0;
+
+        if(totalVendas.length === 0){
+            alert("Valor de Venda não Registrado.!")
+            return;
+        }
+
+        vendas.forEach((venda) => {
+            const linha = document.createElement('tr');
+            linha.innerHTML = `
+                <td>${venda.titulo}</td>
+                <td>R$${parseFloat(venda.preco).toFixed(2)}</td>
+                <td>${venda.comprador}</td>
+            `;
+            tabelaRelatorio.appendChild(linha);
+
+            //Somar o preço ao total de vendas
+            totalVendas += parseFloat(venda.preco);
+        });
+
+        //Adicionar uma linha para o total de vendas
+        const linhaTotal = document.createElement('tr');
+        linhaTotal.innerHTML = `
+            <td><strong>Total</strong></td>
+            <td><strong>R$${totalVendas.toFixed(2)}</strong></td>
+            <td></td>
+        `;
+        tabelaRelatorio.appendChild(linhaTotal);
+
+        //Exibir a área do relatório
+        document.getElementById('relatorio-vendas').classList.remove('hidden');
+}
