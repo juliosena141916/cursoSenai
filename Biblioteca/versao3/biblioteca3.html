@@ -28,6 +28,12 @@
           <button onclick="mostrarSecao('emprestimo')">
             <i class="fas fa-edit icon"></i>Emprestar Livro
           </button>
+          <button onclick="mostrarSecao('venda')">
+            <i class="fas fa-shopping-cart icon"></i>Venda de Livros
+          </button>
+          <button onclick="gerarRelatorioVendas()">
+            <i class="fa-solid fa-flag"></i>Relatório de Vendas
+          </button>
     </div>
 
     <!-- Seção de Cadastro -->
@@ -85,6 +91,25 @@
         </div>
         <button onclick="alterarLivro()">Salvar Alterações</button>
       </div>
+    </div>
+
+    <div id="venda" class="hidden">
+        <h2>Venda de Livros</h2>
+        <div class="form-group">
+            <label for="venda-titulo">Título:</label>
+            <input type="text" id="venda-titulo" placeholder="Digite o título do livro">
+        </div>
+        <div class="form-group">
+            <label for="venda-preco">Título:</label>
+            <input type="text" id="venda-preco" placeholder="Digite o título do livro">
+        </div>
+        <div class="form-group">
+            <label for="venda-comprador">Título:</label>
+            <input type="text" id="venda-comprador" placeholder="Digite o título do livro">
+        </div>
+        <button onclick="registrarVenda()">Registrar Venda</button>
+        <h3>Livros Vendidos</h3>
+        <ul id="lista-vendas"></ul>
     </div>
   </div>
   <script src="biblioteca3.js"></script>
