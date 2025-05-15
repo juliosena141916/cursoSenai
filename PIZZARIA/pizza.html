@@ -12,8 +12,7 @@
         <div class="menu">
             <button onclick="mostrarSecao('cadastrarPizza')">Cadastrar Pizza</button>
             <button onclick="mostrarSecao('consultarPizza')">Consultar Pizzas</button>
-            <button onclick="mostrarSecao('removerPizza')">Alterar Pizza</button><br><br>
-            <button>poi</button>
+            <button onclick="mostrarSecao('removerPizza')">Alterar Pizza</button>
         </div>
 
         <div id="cadastrarPizza" class="hidden">
@@ -25,28 +24,29 @@
             <div class="form-group">
                 <label for="ingredientes">Ingredientes:</label>
                 <input type="text" id="ingredientes" placeholder="Digite os ingredientes da pizza">
-        </div><br>
+            </div><br>
             <div class="form-group">
                 <label for="preco">Preço:</label>
                 <input type="number" id="preco" placeholder="Digite o preço da pizza">
             </div><br>
             <button onclick="cadastrarPizza()">Cadastrar Pizza</button>
+        </div>
 
         <div id="consultarPizza" class="hidden">
-            <h2>consultar Pizza</h2>
-            <div class="form-group">
-                <label for="nomePizza">Nome:</label>
-                <input type="text" id="nomePizza" placeholder="Digite o nome da pizza">
-            </div>
-            <div class="form-group">
-                <label for="ingredientes">Ingredientes:</label>
-                <input type="text" id="ingredientes" placeholder="Digite os ingredientes da pizza">
-        </div>
-        <div>
-            <div class="form-group">
-                <label for="preco">Preço:</label>
-                <input type="number" id="preco" placeholder="Digite o preço da pizza">
-            </div>
+            <h2>Consultar Pizzas</h2>
+            <input type="text" id="consultar" placeholder="Buscar por nome" oninput="consultarPizza()">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Ingredientes</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaPizzas">
+                    <!-- As pizzas cadastradas serão exibidas aqui -->
+                </tbody>
+            </table>
             <button onclick="consultarPizza()">Consultar Pizza</button>
         </div>
     </div>

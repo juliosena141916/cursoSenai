@@ -94,7 +94,7 @@ body {
   }
   
   th {
-    background-color: #007bff;
+    background-color: lab(35.42% -39.57 41.05 / 0.286);
     color: white;
   }
   
