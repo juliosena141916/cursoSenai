@@ -8,37 +8,17 @@
 </head>
 <body>
     <div>
-        <h1>Pizzaria Leão</h1>
-    </div>    
-
-    <div class="menu">
-        <button onclick="mostrarSecao('pizzas')">Pizzas</button>
-        <button onclick="mostrarSecao('bebidas')">Bebidas</button>
-        <button onclick="mostrarSecao('doces')">Doces</button>
-    </div>
-
-    <div id="pizzas" class="hidden">
-        <h2>Pizzas</h2>
-            <p>Margherita</p>
-            <p>Calabresa</p>
-            <p>Portuguesa</p>
-            <p>Frango com Catupiry</p>
-    </div>
-
-    <div id="bebidas" class="hidden">
-        <h2>Bebidas</h2>
-            <p>Suco de laranja</p>
-            <p>Refrigerante</p>
-            <p>Heineken</p>
-            <p>Água</p>     
-    </div>
-
-    <div id="pizzas" class="hidden">
-        <h2>Doces</h2>
-            <p>Pizza de brigadeiro</p>
-            <p>Pizza de leite ninho</p>
-            <p>Pizza de M&M</p>
-            <p>Pizza de morango com nutella</p>
+        <h1>Escolha o sabor da pizza</h1>
+        <div class="pizza">
+            <button class="pizza-botao" data-pizza="10">Pizza de Calabresa</button>
+            <button class="pizza-botao" data-pizza="12">Pizza de Frango</button>
+            <button class="pizza-botao" data-pizza="15">Pizza de Quatro Queijos</button>
+            <button class="pizza-botao" data-pizza="8">Pizza de Marguerita</button>
+        </div>
+        <div class="total">
+            Total: R$ 0,00
+        </div>
+        <script src="pizza.js"></script>
     </div>
 
     
