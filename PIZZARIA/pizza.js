@@ -5,7 +5,7 @@ function mostrarSecao(secao){
     // Esconde todas as seções
     document.getElementById("cadastrarPizza").classList.add("hidden");
     document.getElementById("consultarPizza").classList.add("hidden");
-    // document.getElementById("removerPizza").classList.add("hidden");
+    document.getElementById("removerPizza").classList.add("hidden");
     
     // Mostra a seção
     document.getElementById(secao).classList.remove("hidden");
@@ -46,4 +46,27 @@ function atualizarLista(lista = pizzas){
         `;
         tabela.appendChild(linha);
     });
+}
+
+function consultarPizza(){
+  const busca = document.getElementById("consultar").value.toLowerCase();
+  const resultados = pizzas.filter((pizza) =>
+    pizza.nome.toLowerCase().includes(busca)
+  );
+  atualizarLista(resultados);
+}
+
+function excluirPizza(){
+    const busca = document.getElementById("excluirPizza").value.toLowerCase();
+    const index = pizzas.findIndex((pizza) =>
+        pizza.nome.toLowerCase().includes(busca)
+    );
+    if (index !== -1) {
+        pizzas.splice(index, 1);
+        document.getElementById("excluirPizza").value = "";
+        atualizarLista();
+        alert("Pizza excluída com sucesso!");
+    } else {
+        alert("Pizza não encontrada.");
+    }
 }

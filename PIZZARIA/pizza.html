@@ -12,7 +12,7 @@
         <div class="menu">
             <button onclick="mostrarSecao('cadastrarPizza')">Cadastrar Pizza</button>
             <button onclick="mostrarSecao('consultarPizza')">Consultar Pizzas</button>
-            <button onclick="mostrarSecao('removerPizza')">Alterar Pizza</button>
+            <button onclick="mostrarSecao('removerPizza')">Deletar Pizza</button>
         </div>
 
         <div id="cadastrarPizza" class="hidden">
@@ -49,6 +49,13 @@
             </table>
             <button onclick="consultarPizza()">Consultar Pizza</button>
         </div>
+
+        <div id="removerPizza" class="hidden">
+            <h2>Excluir Pizza</h2>
+            <input type="text" id="excluirPizza" placeholder="Digite o nome da pizza">
+            <button onclick="excluirPizza()">Deletar Pizza</button>
+        </div>
+
     </div>
     <script src="pizza.js"></script>
 </body>

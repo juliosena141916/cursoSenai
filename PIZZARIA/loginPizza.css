@@ -1,0 +1,105 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Estilos globais */
+body {
+  background-color: #000000;
+  color: #FFFFFF;
+  line-height: 1.6;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container principal */
+#login {
+  background-color: #D85E8B;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Títulos */
+h1, h2 {
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+/* Formulário */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  color: #D3D3D3;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #D3D3D3;
+  border-radius: 5px;
+  background-color: #333;
+  color: #FFFFFF;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #F4A6C0;
+  color: #000000;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #D85E8B;
+}
+
+/* Mensagem de erro */
+.mensagem {
+  color: #0f0309;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.mensagem.hidden {
+  display: none;
+}
+
+/* Rodapé */
+footer {
+  margin-top: 20px;
+}
+
+footer .logo {
+  width: 150px;
+  height: auto;
+}
