@@ -13,6 +13,8 @@
             <button onclick="mostrarSecao('cadastrarPizza')">Cadastrar Pizza</button>
             <button onclick="mostrarSecao('consultarPizza')">Consultar Pizzas</button>
             <button onclick="mostrarSecao('removerPizza')">Deletar Pizza</button>
+            <button onclick="mostrarSecao('pedido')">Fazer Pedido</button>
+            <button onclick="mostrarSecao('relatório')">Ver Relatório</button>
         </div>
 
         <div id="cadastrarPizza" class="hidden">
@@ -56,7 +58,29 @@
             <button onclick="excluirPizza()">Deletar Pizza</button>
         </div>
 
-    </div>
+        <div id="pedido" class="hidden">
+            <h2>Fazer Pedido</h2>
+            <input type="text" id="pedidoNome" placeholder="Digite o nome da pizza">
+            <button onclick="pedido()">Fazer Pedido</button>
+        </div>
+
+        <div id="relatório" class="hidden">
+            <h2>Relatório de Vendas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Ingredientes</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaRelatório">
+                    <!-- As pizzas cadastradas serão exibidas aqui -->
+                </tbody>
+            </table>
+            <button onclick="relatório()">Gerar Relatório</button>
+        </div>
+
     <script src="pizza.js"></script>
 </body>
 </html>

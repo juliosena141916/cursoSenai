@@ -1,105 +1,96 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
 
-/* Estilos globais */
+/* Estilos Gerais */
 body {
-  background-color: #000000;
-  color: #FFFFFF;
-  line-height: 1.6;
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Cor de fundo preto */
+    color: #fff; /* Texto branco */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda a altura da tela */
 }
 
-/* Container principal */
-#login {
-  background-color: #D85E8B;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-}
-
-/* Títulos */
-h1, h2 {
-  color: #FFFFFF;
-  margin-bottom: 20px;
+.container {
+    background-color: #333; /* Fundo cinza escuro */
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px; /* Tamanho máximo do formulário */
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
-  font-size: 2rem;
+    color: #ff69b4; /* Rosa vibrante */
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
 h2 {
-  font-size: 1.2rem;
+    color: #fff; /* Texto branco */
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
-/* Formulário */
 .form-group {
-  margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-.form-group label {
-  display: block;
-  color: #D3D3D3;
-  font-size: 1rem;
-  margin-bottom: 5px;
+label {
+    display: block;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 8px;
 }
 
-.form-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #D3D3D3;
-  border-radius: 5px;
-  background-color: #333;
-  color: #FFFFFF;
-  font-size: 1rem;
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #444; /* Bordas escuras */
+    border-radius: 5px;
+    background-color: #222; /* Fundo escuro para inputs */
+    color: #fff; /* Texto branco */
+    font-size: 16px;
 }
 
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #ff69b4; /* Rosa nas bordas quando focado */
+    outline: none;
+}
+
+/* Estilo do botão */
 button {
-  background-color: #F4A6C0;
-  color: #000000;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: 100%;
-  margin-top: 10px;
+    padding: 12px 24px;
+    background-color: #ff69b4; /* Rosa vibrante */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: #D85E8B;
+    background-color: #ff1493; /* Rosa mais escuro ao passar o mouse */
+    transform: scale(1.05);
 }
 
-/* Mensagem de erro */
+/* Mensagens de erro ou sucesso */
 .mensagem {
-  color: #0f0309;
-  margin-top: 10px;
-  font-size: 0.9rem;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ff1493; /* Cor rosa para mensagens de erro */
+    display: none;
 }
 
 .mensagem.hidden {
-  display: none;
+    display: none;
 }
 
-/* Rodapé */
-footer {
-  margin-top: 20px;
-}
-
-footer .logo {
-  width: 150px;
-  height: auto;
+.mensagem.show {
+    display: block;
 }

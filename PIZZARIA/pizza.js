@@ -6,6 +6,8 @@ function mostrarSecao(secao){
     document.getElementById("cadastrarPizza").classList.add("hidden");
     document.getElementById("consultarPizza").classList.add("hidden");
     document.getElementById("removerPizza").classList.add("hidden");
+    document.getElementById("pedido").classList.add("hidden");
+    document.getElementById("relatório").classList.add("hidden");
     
     // Mostra a seção
     document.getElementById(secao).classList.remove("hidden");
@@ -69,4 +71,43 @@ function excluirPizza(){
     } else {
         alert("Pizza não encontrada.");
     }
+}
+
+function pedido(){
+    const nome = document.getElementById("nome").value;
+    const ingredientes = document.getElementById("ingredientes").value;
+    const preco = parseFloat(document.getElementById("preco").value);
+
+    if (nome && ingredientes && preco) {
+        const pedido = {
+            nome: nome,
+            ingredientes: ingredientes,
+            preco: preco
+        };
+        pizzas.push(pedido);
+        document.getElementById("nome").value = "";
+        document.getElementById("ingredientes").value = "";
+        document.getElementById("preco").value = "";
+        alert("Pedido realizado com sucesso!");
+        atualizarRelatório();
+    }
+}
+
+function atualizarRelatório() {
+    const tabelaRelatorio = document.getElementById("tabelaRelatorio");
+    tabelaRelatorio.innerHTML = "";
+
+    pizzas.forEach((pedido) => {
+        const linha1 = document.createElement("tr");
+        linha1.innerHTML = `
+            <td>${pedido.nome}</td>
+            <td>${pedido.ingredientes}</td>
+            <td>${pedido.preco.toFixed(2)}</td>
+        `;
+        tabelaRelatorio.appendChild(linha1);
+    });
+}
+
+function relatório(){
+    
 }
