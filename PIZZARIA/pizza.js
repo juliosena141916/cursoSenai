@@ -1,4 +1,5 @@
 let pizzas = [];
+let pedidos = [];
 let pizzaParaAlterar = null;
 
 function mostrarSecao(secao){
@@ -73,41 +74,31 @@ function excluirPizza(){
     }
 }
 
-function pedido(){
-    const nome = document.getElementById("nome").value;
-    const ingredientes = document.getElementById("ingredientes").value;
-    const preco = parseFloat(document.getElementById("preco").value);
+function fazerPedido() {
+    const nomePizza = document.getElementById('pedidoNome').value;
+    const pizza = pizzas.find(pizza => pizza.nome.toLowerCase() === nomePizza.toLowerCase());
 
-    if (nome && ingredientes && preco) {
-        const pedido = {
-            nome: nome,
-            ingredientes: ingredientes,
-            preco: preco
-        };
-        pizzas.push(pedido);
-        document.getElementById("nome").value = "";
-        document.getElementById("ingredientes").value = "";
-        document.getElementById("preco").value = "";
-        alert("Pedido realizado com sucesso!");
-        atualizarRelatório();
+    if (pizza) {
+        pedidos.push(pizza);
+        alert(`Pedido feito com sucesso! Pizza: ${pizza.nome}`);
+    } else {
+        alert("Pizza não encontrada.");
     }
+
+    document.getElementById('pedidoNome').value = '';
 }
 
-function atualizarRelatório() {
-    const tabelaRelatorio = document.getElementById("tabelaRelatorio");
-    tabelaRelatorio.innerHTML = "";
+function gerarRelatorio() {
+    const tabelaRelatorio = document.getElementById('tabelaRelatório');
+    tabelaRelatorio.innerHTML = '';
 
-    pizzas.forEach((pedido) => {
-        const linha1 = document.createElement("tr");
-        linha1.innerHTML = `
+    pedidos.forEach(pedido => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
             <td>${pedido.nome}</td>
             <td>${pedido.ingredientes}</td>
-            <td>${pedido.preco.toFixed(2)}</td>
+            <td>R$ ${pedido.preco.toFixed(2)}</td>
         `;
-        tabelaRelatorio.appendChild(linha1);
+        tabelaRelatorio.appendChild(row);
     });
-}
-
-function relatório(){
-    
 }
