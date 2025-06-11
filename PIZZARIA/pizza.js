@@ -6,6 +6,7 @@ function mostrarSecao(secao){
     // Esconde todas as seções
     document.getElementById("cadastrarPizza").classList.add("hidden");
     document.getElementById("consultarPizza").classList.add("hidden");
+    document.getElementById("alterar").classList.add("hidden");
     document.getElementById("removerPizza").classList.add("hidden");
     document.getElementById("pedido").classList.add("hidden");
     document.getElementById("relatório").classList.add("hidden");
@@ -101,4 +102,40 @@ function gerarRelatorio() {
         `;
         tabelaRelatorio.appendChild(row);
     });
+}
+
+function buscarPizzaAlterar() {
+    const busca = document.getElementById("alterar").value.toLowerCase();
+    pizzaParaAlterar = pizzas.find((pizza) =>
+        pizza.nome.toLowerCase().includes(busca)
+    );
+
+    if (pizzaParaAlterar) {
+        document.getElementById("form-alterar").classList.remove("hidden");
+        document.getElementById("novo-nome").value = pizzaAlterar.nome;
+        document.getElementById("novos-ingredientes").value = pizzaAlterar.ingredientes;
+        document.getElementById("novo-preco").value = pizzaAlterar.preco;
+    } else {
+        alert("Pizza não encontrada.");
+    }
+}
+
+function alterarPizza() {
+  if (pizzaParaAlterar) {
+    const novoNome = document.getElementById("novo-nome").value;
+    const novosIngredientes = document.getElementById("novos-ingredientes").value;
+    const novoPreco = parseInt(document.getElementById("novo-preço").value);
+
+    if (novoNome && novosIngredientes && novoPreco) {
+      pizzaAlterar.nome = novoNome;
+      pizzaAlterar.ingredientes = novosIngredientes;
+      pizzaAlterar.preco = novoPreco;
+
+      atualizarLista();
+      alert("Livro alterado com sucesso!");
+      document.getElementById("form-alterar").classList.add("hidden");
+    } else {
+      alert("Por favor, preencha todos os campos.");
+    }
+  }
 }

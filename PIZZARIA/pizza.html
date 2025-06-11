@@ -12,6 +12,7 @@
         <div class="menu">
             <button onclick="mostrarSecao('cadastrarPizza')">Cadastrar Pizza</button>
             <button onclick="mostrarSecao('consultarPizza')">Consultar Pizzas</button>
+            <button onclick="mostrarSecao('alterar')">Alterar Pizza</button>
             <button onclick="mostrarSecao('removerPizza')">Deletar Pizza</button>
             <button onclick="mostrarSecao('pedido')">Fazer Pedido</button>
             <button onclick="mostrarSecao('relatório')">Ver Relatório</button>
@@ -80,6 +81,26 @@
             </table><br>
             <button onclick="gerarRelatorio()">Gerar Relatório</button>
         </div>
+
+        <div id="alterar" class="hidden">
+      <h2>Alterar Pizza</h2>
+      <input type="text" id="alterar" placeholder="Buscar nome" oninput="buscarPizzaAlterar()">
+      <div id="form-alterar" class="hidden">
+        <div class="form-group">
+          <label for="novo-nome">Novo nome:</label>
+          <input type="text" id="novo-nome" placeholder="Digite o novo nome">
+        </div>
+        <div class="form-group">
+          <label for="novos-ingredientes">Novos ingredientes:</label>
+          <input type="text" id="novos-ingredientes" placeholder="Digite os novos ingredientes">
+        </div>
+        <div class="form-group">
+          <label for="novo-preço">Novo preço:</label>
+          <input type="number" id="novo-preço" placeholder="Digite o novo valor">
+        </div>
+      </div><br>
+      <button onclick="alterarPizza()">Alterar Pizza</button>
+    </div>
 
     <script src="pizza.js"></script>
 </body>
