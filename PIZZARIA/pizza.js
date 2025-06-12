@@ -105,13 +105,13 @@ function gerarRelatorio() {
 }
 
 function buscarPizzaAlterar() {
-    const busca = document.getElementById("alterar").value.toLowerCase();
-    pizzaParaAlterar = pizzas.find((pizza) =>
+    const busca = document.getElementById("alterarP").value.toLowerCase();
+    pizzaAlterar = pizzas.find((pizza) =>
         pizza.nome.toLowerCase().includes(busca)
     );
 
-    if (pizzaParaAlterar) {
-        document.getElementById("form-alterar").classList.remove("hidden");
+    if (pizzaAlterar) {
+        document.getElementById("alterar").classList.remove("hidden");
         document.getElementById("novo-nome").value = pizzaAlterar.nome;
         document.getElementById("novos-ingredientes").value = pizzaAlterar.ingredientes;
         document.getElementById("novo-preco").value = pizzaAlterar.preco;
@@ -121,7 +121,7 @@ function buscarPizzaAlterar() {
 }
 
 function alterarPizza() {
-  if (pizzaParaAlterar) {
+  if (pizzaAlterar) {
     const novoNome = document.getElementById("novo-nome").value;
     const novosIngredientes = document.getElementById("novos-ingredientes").value;
     const novoPreco = parseInt(document.getElementById("novo-preço").value);
@@ -132,7 +132,7 @@ function alterarPizza() {
       pizzaAlterar.preco = novoPreco;
 
       atualizarLista();
-      alert("Livro alterado com sucesso!");
+      alert("Pizza alterada com sucesso!");
       document.getElementById("form-alterar").classList.add("hidden");
     } else {
       alert("Por favor, preencha todos os campos.");
