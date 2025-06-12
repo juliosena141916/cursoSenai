@@ -93,6 +93,8 @@ function gerarRelatorio() {
     const tabelaRelatorio = document.getElementById('tabelaRelatório');
     tabelaRelatorio.innerHTML = '';
 
+    let total = 0;
+
     pedidos.forEach(pedido => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -101,7 +103,14 @@ function gerarRelatorio() {
             <td>R$ ${pedido.preco.toFixed(2)}</td>
         `;
         tabelaRelatorio.appendChild(row);
+        total += pedido.preco;
     });
+    const totalRow = document.createElement('tr');
+    totalRow.innerHTML = `
+        <td colspan="2">Total</td>
+        <td>R$ ${total.toFixed(2)}</td>
+    `;
+    tabelaRelatorio.appendChild(totalRow);
 }
 
 function buscarPizzaAlterar() {
